@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Exercise</title>
+<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f9f9f9;
+    }
+</style>
+</head>
+<body>
+<h2>JavaScript Exercise</h2>
+
+<!-- 1-ci tapşırıq: -->
+<input type="text" id="textInput" placeholder="Enter text">
+<button onclick="showAlert()">Show Alert</button>
+
+<!-- 2-ci tapşırıq: -->
+<!-- <input type="text" id="loginInput" placeholder="Enter username"> -->
+<script>
+    // Check if username exists in localStorage and fill the input
+    // var savedUsername = localStorage.getItem("username");
+    // if (savedUsername) {
+    //     document.getElementById("loginInput").value = savedUsername;
+    // }
+
+    // // Save username to localStorage whenever input changes
+    // document.getElementById("loginInput").addEventListener("input", function() {
+    //     localStorage.setItem("username", this.value);
+    // });
+</script>
+
+<!-- 3-cü tapşırıq: -->
+<input type="text" id="titleInput" placeholder="Title">
+<input type="text" id="textInput" placeholder="Text">
+<button onclick="createCard()">Create Card</button>
+
+<div id="cardContainer"></div>
+
+<script>
+    // Function to show alert with input text
+    function showAlert() {
+        var text = document.getElementById("textInput").value;
+        alert(text);
+    }
+
+    // Function to create a card
+    function createCard() {
+        var title = document.getElementById("titleInput").value;
+        var text = document.getElementById("textInput").value;
+
+        var card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = "<h3>" + title + "</h3><p>" + text + "</p>";
+
+        document.getElementById("cardContainer").appendChild(card);
+    }
+</script>
+</body>
+</html>
